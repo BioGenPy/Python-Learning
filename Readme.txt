@@ -220,7 +220,7 @@ Lambda functions
 Function-based mini project
 
 # git 
-git remote add origin https://github.com/NexBite/Python-Learning.git
+git remote add origin https://github.com/.../Python-Learning.git
 Step 9: Push Code
 git branch -M main
 git push -u origin main
@@ -1068,3 +1068,1003 @@ Add 5% interest
 (Hint: interest is balance * 0.05)
 
 Print the final balance.
+
+# ------------- Tomorrow's Plan (Day 3)
+
+We'll continue with topics that are heavily used in interviews and in pandas:
+
+Membership Operators (in, not in)
+Identity Operators (is, is not)
+Strings (30+ interview questions)
+Lists (50+ interview questions)
+Tuples
+Sets
+Dictionaries (advanced)
+
+Then we'll move into:
+
+File Handling
+Exception Handling
+Object-Oriented Programming (OOP)
+NumPy
+Pandas
+Real interview datasets
+Data cleaning
+Data analysis
+Excel automation
+
+The goal is to build the skills expected for a Python/Pandas job.
+
+Have a good evening, and I'll see you tomorrow for Day 3. 👋
+
+#============================= Day 3 – Operators & Strings ==================================
+Part 1: Membership Operators
+in
+not in
+Strings
+Lists
+Tuples
+Dictionaries
+10 interview questions
+10 coding exercises
+Part 2: Identity Operators
+is
+is not
+None
+Mutable vs Immutable
+Interview pitfalls
+10 interview questions
+Part 3: Strings (Beginner)
+
+Topics:
+
+Indexing
+Slicing
+String methods
+split()
+join()
+replace()
+find()
+count()
+startswith()
+endswith()
+Formatting (f"", .format())
+
+Practice:
+
+15 coding exercises
+20 interview questions
+
+Mini Project:
+
+Password Validator
+Day 4 – Strings (Advanced)
+Palindrome
+Reverse String
+Character Frequency
+Anagram
+Remove Duplicates
+Word Counter
+Email Validator
+Interview Questions
+Mini Project
+Day 5 – Lists
+
+Topics:
+
+Create Lists
+Access
+Update
+Delete
+Loop
+Nested Lists
+List Methods
+List Comprehension
+
+Practice:
+
+20 exercises
+
+Mini Project:
+
+Student Management System
+Day 6 – Tuples & Sets
+Tuples
+Packing
+Unpacking
+Immutability
+Interview Questions
+Sets
+Union
+Intersection
+Difference
+Symmetric Difference
+
+Mini Project:
+
+Duplicate Finder
+Day 7 – Dictionaries
+
+Topics:
+
+CRUD Operations
+Nested Dictionaries
+Looping
+get()
+items()
+keys()
+values()
+
+Mini Project:
+
+Employee Database
+
+# ================== Part 1: Membership Operators
+
+There are only two membership operators in Python:
+
+Operator	Meaning
+in	Checks if a value exists
+not in	Checks if a value does not exist
+
+They always return a Boolean:
+
+True
+False
+1. Membership with Strings
+Example 1
+name = "Kamal"
+
+print("K" in name)
+
+Output
+
+True
+
+Because "K" exists in "Kamal".
+
+Example 2
+name = "Kamal"
+
+print("z" in name)
+
+Output
+
+False
+Example 3
+name = "Python"
+
+print("thon" in name)
+
+Output
+
+True
+
+Python checks for substrings too.
+
+Example 4
+name = "Python"
+
+print("java" not in name)
+
+Output
+
+True
+2. Membership with Lists
+languages = ["Python", "Java", "C#", "Go"]
+
+print("Python" in languages)
+
+Output
+
+True
+print("PHP" in languages)
+
+Output
+
+False
+print("PHP" not in languages)
+
+Output
+
+True
+3. Membership with Tuples
+numbers = (10, 20, 30, 40)
+
+print(20 in numbers)
+
+Output
+
+True
+print(50 not in numbers)
+
+Output
+
+True
+4. Membership with Dictionaries
+
+This is a common interview question.
+
+student = {
+    "name": "Kamal",
+    "age": 36,
+    "city": "Kolkata"
+}
+
+print("name" in student)
+
+Output
+
+True
+Why?
+
+Because in checks keys, not values.
+
+print("Kamal" in student)
+
+Output
+
+False
+
+To check values:
+
+print("Kamal" in student.values())
+
+Output
+
+True
+
+To check keys:
+
+print("city" in student.keys())
+
+Output
+
+True
+Real Job Example
+VALID_ROLES = ("admin", "teacher", "student")
+
+role = input("Enter role: ").strip().lower()
+
+if role in VALID_ROLES:
+    print("Access Granted")
+else:
+    print("Invalid Role")
+
+This pattern is used in authentication systems.
+
+Interview Questions
+1.
+print("a" in "apple")
+
+Answer: True
+
+2.
+print("A" in "apple")
+
+Answer: False
+
+Python is case-sensitive.
+
+3.
+numbers = [10, 20, 30]
+
+print(40 in numbers)
+
+Answer: False
+
+4.
+numbers = [10, 20, 30]
+
+print(40 not in numbers)
+
+Answer: True
+
+5.
+student = {"name": "Kamal"}
+
+print("name" in student)
+
+Answer: True
+
+6.
+student = {"name": "Kamal"}
+
+print("Kamal" in student)
+
+Answer: False
+
+7.
+
+How do you check dictionary values?
+
+Answer:
+
+"Kamal" in student.values()
+8.
+
+How do you check dictionary keys?
+
+Answer:
+
+"name" in student
+
+or
+
+"name" in student.keys()
+9.
+
+Which data types support membership operators?
+
+Answer:
+
+Strings
+Lists
+Tuples
+Dictionaries
+Sets
+10.
+
+What is the return type of in?
+
+Answer:
+
+bool
+Coding Exercises
+Exercise 1
+
+Ask the user for a letter.
+
+Check whether it exists in:
+
+word = "python"
+Exercise 2
+
+Ask the user for a fruit.
+
+Check if it exists in:
+
+fruits = ["apple", "banana", "mango"]
+Exercise 3
+
+Ask the user for a country.
+
+If it is not in:
+
+countries = ("India", "USA", "Japan")
+
+Print:
+
+Country not supported
+Exercise 4
+
+Create:
+
+student = {
+    "name": "Kamal",
+    "age": 36,
+    "city": "Kolkata"
+}
+
+Ask the user for a key.
+
+Print:
+
+Key Found
+
+or
+
+Key Not Found
+Exercise 5
+
+Ask the user for a value.
+
+Check if it exists in:
+
+student.values()
+Exercise 6
+
+Create a list of programming languages.
+
+Ask the user to enter one.
+
+Tell them whether it is supported.
+
+Exercise 7
+
+Password Validator
+
+Allowed passwords:
+
+allowed_passwords = [
+    "python123",
+    "admin123",
+    "welcome123"
+]
+
+Ask the user for a password.
+
+If it exists:
+
+Login Successful
+
+Else:
+
+Invalid Password
+Exercise 8
+
+Movie Search
+
+movies = [
+    "Inception",
+    "Interstellar",
+    "Avatar",
+    "Titanic"
+]
+
+Search for a movie.
+
+Exercise 9
+
+Create a menu.
+
+Allowed options:
+
+("deposit", "withdraw", "balance", "exit")
+
+Validate the user's input.
+
+Exercise 10 (Interview Level)
+
+Create a dictionary:
+
+employees = {
+    101: "Alice",
+    102: "Bob",
+    103: "Charlie"
+}
+
+Ask the user for an employee ID.
+
+Tell them whether the ID exists.
+
+Mini Project
+User Registration Validator
+
+Requirements:
+
+Allowed usernames:
+existing_users = [
+    "kamal",
+    "admin",
+    "guest"
+]
+Ask for a new username.
+If the username already exists:
+Username already taken.
+
+Otherwise:
+
+Username available.
+Your Assignment
+
+Complete these in order:
+
+✅ Exercise 1–5
+✅ Exercise 6–10
+✅ Mini Project
+
+# ================== Which data types support membership operators?
+
+Answer:
+
+Strings
+Lists
+Tuples
+Dictionaries
+Sets
+# ========= 10.
+
+What is the return type of in?
+ANS : bool
+
+# ---------------------- Exercise 1
+Ask the user for a letter.
+Check whether it exists in:
+
+
+#------------------Next Lesson
+We'll cover Identity Operators (is, is not).
+This topic is short but very important because interviewers frequently ask questions like:
+x = None
+if x is None:
+    ...
+or
+a = [1, 2]
+b = a
+print(a is b)
+print(a == b)
+Understanding the difference between is and == is a common interview question, and it's essential before moving on to object-oriented programming and pandas.
+
+# =========================================== Week 1 – Day 3 (Part 2)
+
+
+Week 1 – Day 3 (Part 2)
+Identity Operators
+
+There are only two identity operators.
+
+Operator	Meaning
+is	Are both variables the same object in memory?
+is not	Are they different objects in memory?
+
+They return:
+
+True
+False
+First Understand ==
+
+== compares values.
+
+Example:
+
+a = 10
+b = 10
+
+print(a == b)
+
+Output
+
+True
+
+Because
+
+10 == 10
+Now is
+
+is compares identity (memory object).
+
+Example
+
+a = 10
+b = 10
+
+print(a is b)
+
+Output
+
+True
+
+Looks the same...
+
+But wait...
+
+Example 2
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a == b)
+
+Output
+
+True
+
+Because both lists contain the same values.
+
+Now
+
+print(a is b)
+
+Output
+
+False
+
+Why?
+
+Because Python created two different list objects.
+
+Imagine memory like this:
+
+Memory
+
+a ----> [1,2,3]
+
+b ----> [1,2,3]
+
+Same values
+
+Different locations.
+
+Example 3
+a = [1, 2, 3]
+
+b = a
+
+print(a == b)
+
+print(a is b)
+
+Output
+
+True
+True
+
+Why?
+
+Because
+
+Memory
+
+a ----\
+       > [1,2,3]
+b ----/
+
+Both variables point to the same object.
+
+Example 4
+
+Change one list.
+
+a = [1, 2, 3]
+
+b = a
+
+b.append(4)
+
+print(a)
+
+Output
+
+[1,2,3,4]
+
+Many beginners expect:
+
+[1,2,3]
+
+Wrong.
+
+Both variables refer to the same list.
+
+Example 5
+a = [1,2]
+
+b = [1,2]
+
+b.append(3)
+
+print(a)
+
+Output
+
+[1,2]
+
+Because
+
+a
+
+and
+
+b
+
+are different objects.
+None
+
+This is where interviews become interesting.
+
+user = None
+
+Means
+
+No value
+
+Not
+
+0
+
+or
+
+False
+
+or
+
+""
+
+Correct way
+
+if user is None:
+    print("No User")
+
+Never write
+
+if user == None:
+
+Python's style guide (PEP 8) recommends:
+
+is None
+is not
+
+Example
+
+user = "Kamal"
+
+if user is not None:
+    print("User Found")
+
+Output
+
+User Found
+Interview Questions
+Q1
+
+Difference between
+
+==
+
+and
+
+is
+
+Answer
+
+== compares values.
+
+is compares object identity.
+Q2
+
+Predict
+
+a = [1,2]
+
+b = [1,2]
+
+print(a == b)
+
+Answer
+
+True
+Q3
+a = [1,2]
+
+b = [1,2]
+
+print(a is b)
+
+Answer
+
+False
+Q4
+a = [1,2]
+
+b = a
+
+print(a is b)
+
+Answer
+
+True
+Q5
+x = None
+
+print(x is None)
+
+Answer
+
+True
+Q6
+x = None
+
+print(x == None)
+
+Answer
+
+True
+
+But interviewers expect
+
+x is None
+Q7
+x = None
+
+print(x is not None)
+
+Answer
+
+False
+Q8
+
+What does
+
+is not
+
+mean?
+
+Answer
+
+Checks that two variables do NOT reference the same object.
+Q9
+
+Which is recommended?
+
+if x is None:
+
+or
+
+if x == None:
+
+Answer
+
+is None
+Q10
+
+Why?
+
+Answer
+
+Because:
+
+clearer
+faster for identity checks
+follows PEP 8
+standard Python practice
+Practice Exercises
+Exercise 1
+a = 100
+
+b = 100
+
+print(a == b)
+
+print(a is b)
+
+Predict before running.
+
+Exercise 2
+name1 = "Python"
+
+name2 = "Python"
+
+print(name1 is name2)
+Exercise 3
+list1 = [10,20]
+
+list2 = [10,20]
+
+print(list1 == list2)
+
+print(list1 is list2)
+Exercise 4
+list1 = [10,20]
+
+list2 = list1
+
+print(list1 is list2)
+Exercise 5
+
+Create:
+
+employee = None
+
+Use
+
+is None
+
+to check.
+
+Exercise 6
+
+Ask the user for a name.
+
+If they press Enter without typing anything:
+
+name = None
+
+Then check
+
+is None
+Exercise 7
+
+Create:
+
+a = []
+
+b = a
+
+Append
+
+100
+
+Print both.
+
+Explain why both changed.
+
+Exercise 8
+
+Create
+
+a = []
+
+b = []
+
+Append
+
+100
+
+only to b.
+
+Print both.
+
+Exercise 9
+
+Write a function:
+
+def check_employee(employee):
+
+If
+
+employee is None
+
+return
+
+Employee Not Found
+
+Else
+
+Employee Found
+Exercise 10 (Interview Level)
+
+Predict the output without running:
+
+a = [1,2,3]
+
+b = a
+
+c = [1,2,3]
+
+print(a == b)
+
+print(a is b)
+
+print(a == c)
+
+print(a is c)
+Mini Project
+Employee Lookup
+
+Requirements:
+
+Create:
+employee = None
+Ask the user:
+Enter employee name:
+If the user enters nothing:
+employee = None
+
+Otherwise
+
+employee = input(...)
+Use:
+is None
+
+If no employee:
+
+Employee Not Found
+
+Otherwise:
+
+Welcome Kamal
+Interview Tip
+
+If an interviewer asks:
+
+"When should you use is instead of ==?"
+
+A strong answer is:
+
+Use == when comparing values, such as numbers, strings, or lists. Use is when checking object identity, especially for singleton objects like None. A common example is if value is None: because it follows Python's recommended style and checks identity rather than equality.
+
+Your Assignment
+
+Write the following yourself:
+
+✅ Exercises 1–10
+✅ Mini Project
