@@ -36,3 +36,41 @@ def my_function(fname, lname):
   print(fname + " " + lname)
 my_function("Emil", "Refsnes")
 
+# Keyword Arguments
+You can send arguments with the key = value syntax.
+Example:
+def my_function(animal, name):
+  print("I have a", animal)
+  print("My", animal + "'s name is", name)
+
+my_function(animal = "dog", name = "Buddy")
+
+
+# What is *args?
+The *args parameter allows a function to accept any number of positional arguments.
+Inside the function, args becomes a tuple containing all the passed arguments:
+
+# Arbitrary Keyword Arguments - **kwargs
+If you do not know how many keyword arguments will be passed into your function, add two asterisks ** before the parameter name.
+This way, the function will receive a dictionary of arguments and can access the items accordingly:
+
+# What is **kwargs?
+The **kwargs parameter allows a function to accept any number of keyword arguments.
+
+Inside the function, kwargs becomes a dictionary containing all the keyword arguments:
+
+# Combining *args and **kwargs
+You can use both *args and **kwargs in the same function.
+The order must be:
+regular parameters
+*args
+**kwargs
+
+# Unpacking Arguments
+The * and ** operators can also be used when calling functions to unpack (expand) a list or dictionary into separate arguments.
+
+# Unpacking Lists with *
+If you have values stored in a list, you can use * to unpack them into individual arguments
+
+# Unpacking Dictionaries with **
+If you have keyword arguments stored in a dictionary, you can use ** to unpack them:
