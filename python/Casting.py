@@ -1,6 +1,0 @@
-x = str(3)
-y = str(4)
-z = str(5)
-print(x)
-print(y)
-print(z)
